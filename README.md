@@ -4,7 +4,7 @@ This repo contains files and instructions needed to install your own demo cloud
 
 - A Machine with
   - RAM (16GB)
-  - HDD (30GB)
+  - HDD (100GB)
 - Have repositories and other data synced via `syncdata` script
 
 ## Pointers
