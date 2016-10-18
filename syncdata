@@ -1,0 +1,9 @@
+#!/bin/sh
+cd /var/cache
+mkdir -p repos/tumbleweed/repo/oss
+rsync="rsync -a ftp.gwdg.de::opensuse"
+$rsync/tumbleweed/repo/oss/ repos/tumbleweed/repo/oss/
+$rsync/distribution/leap/42.1/repo/oss/ repos/leap-42.1-oss/
+$rsync/update/leap/42.1/oss/ repos/leap-42.1-update/
+$rsync/repositories/Cloud:/OpenStack:/Newton repos/
+
