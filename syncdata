@@ -1,9 +1,12 @@
 #!/bin/sh
 cd /var/cache
-mkdir -p repos/tumbleweed/repo/oss
+mkdir -p repos/tumbleweed/repo/oss repos/images
 rsync="rsync -a --delete-after ftp.gwdg.de::opensuse"
 $rsync/tumbleweed/repo/oss/ repos/tumbleweed/repo/oss/
 $rsync/distribution/leap/42.1/repo/oss/ repos/leap-42.1-oss/
 $rsync/update/leap/42.1/oss/ repos/leap-42.1-update/
 $rsync/repositories/Cloud:/OpenStack:/Newton/ repos/Newton/
+
+cd /var/cache/repos/images
+wget -N http://data.zq1.de/images/openSUSE-Leap-42.1.qcow2
 
