@@ -10,3 +10,6 @@ $rsync/repositories/Cloud:/OpenStack:/Newton/ repos/Newton/
 cd /var/cache/repos/images
 wget -N http://data.zq1.de/images/openSUSE-Leap-42.1.qcow2
 
+cd /root
+git clone https://github.com/SUSE-Cloud/automation.git
+
