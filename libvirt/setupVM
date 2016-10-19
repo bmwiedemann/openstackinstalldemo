@@ -1,0 +1,15 @@
+#!/bin/sh
+img=/var/cache/repos/images/openSUSE-Leap-42.1.qcow2
+if ! [[ -e $img ]] ; then
+	echo "missing $img"
+	exit 5
+fi
+rclibvirtd start
+rcvirtlogd start
+cp -a $img /var/lib/libvirt/images/cleanvm.qcow2
+qemu-img create /var/lib/libvirt/images/cleanvm-data.raw 40G
+virsh net-define cleanvm-net.xml
+virsh net-start cleanvm
+virsh define cleanvm.xml
+virsh start cleanvm
+
