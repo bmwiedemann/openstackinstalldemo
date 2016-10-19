@@ -6,6 +6,8 @@ if ! [[ -e $img ]] ; then
 fi
 rclibvirtd start
 rcvirtlogd start
+virsh destroy cleanvm
+virsh undefine cleanvm
 cp -a $img /var/lib/libvirt/images/cleanvm.qcow2
 qemu-img create /var/lib/libvirt/images/cleanvm-data.raw 40G
 virsh net-define cleanvm-net.xml
