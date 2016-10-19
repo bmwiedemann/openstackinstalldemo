@@ -8,7 +8,10 @@ $rsync/update/leap/42.1/oss/ repos/leap-42.1-update/
 $rsync/repositories/Cloud:/OpenStack:/Newton/ repos/Newton/
 
 cd /var/cache/repos/images
-wget -N http://data.zq1.de/images/openSUSE-Leap-42.1.qcow2
+for i in openSUSE-Leap-42.1.qcow2 debian.5-0.x86.qcow2 cirros-0.3.4-x86_64-uec.tar.gz
+do
+    wget -N http://data.zq1.de/images/$i
+done
 
 cd /root
 git clone https://github.com/SUSE-Cloud/automation.git
