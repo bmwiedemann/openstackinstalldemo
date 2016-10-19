@@ -13,3 +13,6 @@ virsh net-start cleanvm
 virsh define cleanvm.xml
 virsh start cleanvm
 
+sleep 30
+ssh-copy-id cleanvm
+rsync -a ~/automation/scripts/jenkins/qa_openstack.sh root@cleanvm:
