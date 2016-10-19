@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "installing required packages"
-zypper -n in git-core wget rsync libvirt kvm
+zypper -n in git-core wget rsync libvirt kvm netcat-openbsd
