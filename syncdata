@@ -15,4 +15,6 @@ done
 
 cd /root
 git clone https://github.com/SUSE-Cloud/automation.git
+cd automation
+git checkout clouddemo
 
