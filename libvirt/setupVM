@@ -21,3 +21,8 @@ onenode=cleanvm
 wait_for 60 1 "netcat -w 2 -z $onenode 22" "node $onenode to be acessible"
 ssh-copy-id cleanvm
 rsync -a ~/automation/scripts/jenkins/qa_openstack.sh root@cleanvm:
+ssh cleanvm "
+    zypper mr -d --all
+    zypper ar http://192.168.23.1/leap-42.1-oss/ oss
+    zypper ar --refresh http://192.168.23.1/leap-42.1-update/ update
+"

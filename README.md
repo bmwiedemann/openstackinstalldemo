@@ -19,6 +19,7 @@ This repo contains files and instructions needed to install your own demo cloud
 cd libvirt/ && setupVM
 ssh cleanvm "
     export mirror=http://192.168.23.1/images
+    export repomirror=http://192.168.23.1
     export cloudsource=openstacknewton
     bash -x qa_openstack.sh
 "
