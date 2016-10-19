@@ -14,3 +14,11 @@ This repo contains files and instructions needed to install your own demo cloud
 - https://github.com/SUSE-Cloud/automation/blob/jenkins/scripts/jenkins/ci.opensuse.org/openstack-cleanvm.xml#L152
 - https://build.opensuse.org/project/show/Cloud:OpenStack:Newton
 
+
+## Finally
+cd libvirt/ && setupVM
+ssh cleanvm "
+    export mirror=http://192.168.23.1/images
+    export cloudsource=openstacknewton
+    bash -x qa_openstack.sh
+"
