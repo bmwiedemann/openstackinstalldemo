@@ -10,6 +10,7 @@ virsh destroy cleanvm
 virsh undefine cleanvm
 cp -a $img /var/lib/libvirt/images/cleanvm.qcow2
 qemu-img create /var/lib/libvirt/images/cleanvm-data.raw 40G
+qemu-img create /var/lib/libvirt/images/cleanvm-data2.raw 20G
 virsh net-define cleanvm-net.xml
 virsh net-start cleanvm
 virsh define cleanvm.xml
