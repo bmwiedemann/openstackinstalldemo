@@ -1,11 +1,12 @@
 #!/bin/sh
-cd /var/cache
-mkdir -p repos/tumbleweed/repo/oss repos/images
+mkdir -p /var/cache/repos
+cd /var/cache/repos
+mkdir -p images tumbleweed/repo/oss distribution/leap/42.1/repo/oss update/leap/42.1/oss/ repositories/Cloud:/OpenStack:/Newton/
 rsync="rsync -a --delete-after ftp.gwdg.de::opensuse"
-#$rsync/tumbleweed/repo/oss/ repos/tumbleweed/repo/oss/
-$rsync/distribution/leap/42.1/repo/oss/ repos/leap-42.1-oss/
-$rsync/update/leap/42.1/oss/ repos/leap-42.1-update/
-$rsync/repositories/Cloud:/OpenStack:/Newton/ repos/Newton/
+#$rsync/tumbleweed/repo/oss/ tumbleweed/repo/oss/
+$rsync/distribution/leap/42.1/repo/oss/ distribution/leap/42.1/repo/oss/
+$rsync/update/leap/42.1/oss/ update/leap/42.1/oss/
+$rsync/repositories/Cloud:/OpenStack:/Newton/ repositories/Cloud:/OpenStack:/Newton/
 
 cd /var/cache/repos/images
 for i in openSUSE-Leap-42.1.qcow2 debian.5-0.x86.qcow2 cirros-0.3.4-x86_64-uec.tar.gz
