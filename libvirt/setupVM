@@ -4,6 +4,8 @@ if ! [[ -e $img ]] ; then
 	echo "missing $img"
 	exit 5
 fi
+. /root/automation/scripts/lib/mkcloud-libvirt.sh
+libvirt_modprobe_kvm
 rclibvirtd start
 rcvirtlogd start
 virsh destroy cleanvm
