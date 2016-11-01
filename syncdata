@@ -2,7 +2,7 @@
 mkdir -p /var/cache/repos
 cd /var/cache/repos
 mkdir -p images tumbleweed/repo/oss distribution/leap/42.1/repo/oss update/leap/42.1/oss/ repositories/Cloud:/OpenStack:/Newton/
-rsync="rsync -a --delete-after ftp.gwdg.de::opensuse"
+rsync="rsync -a --delete-after --exclude=".~tmp~" ftp.gwdg.de::opensuse"
 #$rsync/tumbleweed/repo/oss/ tumbleweed/repo/oss/
 $rsync/distribution/leap/42.1/repo/oss/ distribution/leap/42.1/repo/oss/
 $rsync/update/leap/42.1/oss/ update/leap/42.1/oss/
