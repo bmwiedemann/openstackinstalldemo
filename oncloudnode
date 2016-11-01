@@ -1,0 +1,7 @@
+#!/bin/sh
+# this script should run on the "cleanvm" cloud node
+
+export mirror=http://192.168.23.1/images
+export repomirror=http://192.168.23.1
+export cloudsource=openstacknewton
+bash -x qa_openstack.sh

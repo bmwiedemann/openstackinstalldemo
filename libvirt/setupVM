@@ -22,7 +22,7 @@ virsh start cleanvm
 onenode=cleanvm
 wait_for 60 1 "netcat -w 2 -z $onenode 22" "node $onenode to be acessible"
 ssh-copy-id cleanvm
-rsync -a ~/automation/scripts/jenkins/qa_openstack.sh root@cleanvm:
+rsync -a ../oncloudnode ~/automation/scripts/jenkins/qa_openstack.sh root@cleanvm:
 ssh cleanvm "
     zypper mr -d --all
 "
