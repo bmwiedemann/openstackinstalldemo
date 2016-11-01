@@ -1,6 +1,8 @@
 #!/bin/sh
 # this script should run on the "cleanvm" cloud node
 
+rm -f /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf # dont disable ip-forward
+sed -i -e s/www3.zq1.de/192.168.23.1/ qa_openstack.sh
 export mirror=http://192.168.23.1/images
 export repomirror=http://192.168.23.1
 export cloudsource=openstacknewton
